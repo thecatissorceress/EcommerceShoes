@@ -27,29 +27,99 @@
             /* Adjust the spacing between items as needed */
         }
         
-        .scroll-item img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
+        .box-color {
             border-radius: 30px;
+            background-color: #4c79c2;
+            width: 400px;
+            height: 350px;
+            display: inline-block;
+        }
+        
+        .scroll-container1 {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer and Edge */
+        }
+        
+        .scroll-container1::-webkit-scrollbar {
+            width: 0px;
+            /* Safari and Chrome */
+        }
+        
+        .scroll-item1 {
+            display: inline-block;
+            width: auto;
+            /* Adjust the width of each item as needed */
+            height: auto;
+            margin-right: 1%;
+            /* Adjust the spacing between items as needed */
         }
     </style>
 </head>
 
 <body>
-    <div class="scroll-container">
-        <div class="scroll-item">
-            <img src="images/1stImage.jpg" alt="Image 1">
-        </div>
-        <div class="scroll-item">
-            <img src="images/1stImage.jpg" alt="Image 2">
-        </div>
-        <div class="scroll-item">
-            <img src="images/1stImage.jpg" alt="Image 3">
-        </div>
-        <!-- Add more scroll-items with images as needed -->
-    </div>
+    <div class="row ml-1">
+        <div class="column mt-4 ml-1 " style="width:95%;  ">
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <div class="box-color" style="position:relative;">
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="box-color">
 
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="box-color">
+
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="box-color">
+
+                    </div>
+                </div>
+
+
+
+                <!-- Add more scroll-items with images as needed -->
+            </div>
+        </div>
+    </div>
+    <div class="row ml-1">
+        <div class="column mt-4 ml-1 " style="width:95%;  ">
+            <div class="scroll-container1">
+                <div class="scroll-item1">
+                    <div class="box-color" style="position:relative;">
+                    </div>
+                </div>
+                <div class="scroll-item1">
+                    <div class="box-color">
+
+                    </div>
+                </div>
+                <div class="scroll-item1">
+                    <div class="box-color">
+
+                    </div>
+                </div>
+                <div class="scroll-item1">
+                    <div class="box-color">
+
+                    </div>
+                </div>
+
+
+
+                <!-- Add more scroll-items with images as needed -->
+            </div>
+        </div>
+    </div>
     <script>
         var scrollContainer = document.querySelector(".scroll-container");
         var isMouseDown = false;
@@ -76,6 +146,34 @@
             var x = e.pageX - scrollContainer.offsetLeft;
             var scroll = x - startX;
             scrollContainer.scrollLeft = scrollLeft - scroll;
+        });
+    </script>
+    <script>
+        var scrollContainer1 = document.querySelector(".scroll-container1");
+        var isMouseDown1 = false;
+        var startX1;
+        var scrollLeft1;
+
+        scrollContainer1.addEventListener("mousedown", function(e) {
+            isMouseDown1 = true;
+            startX11 = e.pageX - scrollContainer1.offsetLeft;
+            scrollLeft1 = scrollContainer1.scrollLeft;
+        });
+
+        scrollContainer1.addEventListener("mouseleave", function() {
+            isMouseDown1 = false;
+        });
+
+        scrollContainer1.addEventListener("mouseup", function() {
+            isMouseDown1 = false;
+        });
+
+        scrollContainer1.addEventListener("mousemove", function(e) {
+            if (!isMouseDown1) return;
+            e.preventDefault();
+            var x1 = e.pageX - scrollContainer1.offsetLeft;
+            var scroll1 = x1 - startX1;
+            scrollContainer1.scrollLeft1 = scrollLeft1 - scroll1;
         });
     </script>
 </body>

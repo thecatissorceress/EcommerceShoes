@@ -61,29 +61,6 @@
         border-radius: 30px;
     }
     
-    div.scrollmenu::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        background-color: #F5F5F5;
-    }
-    
-    div.scrollmenu::-webkit-scrollbar {
-        width: 12px;
-        background-color: #F5F5F5;
-    }
-    
-    div.scrollmenu::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-        background-color: #555;
-    }
-    
-    div.scrollmenu::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-        background-color: #555;
-    }
-    
     .scroll-container {
         width: 100%;
         overflow-x: auto;
@@ -108,10 +85,36 @@
         /* Adjust the spacing between items as needed */
     }
     
-    .scroll-item img {
+    .box-color {
+        border-radius: 30px;
+        background-color: #4c79c2;
+        width: 400px;
+        height: 350px;
+        display: inline-block;
+    }
+    
+    .scroll-container1 {
         width: 100%;
-        max-width: 280px;
-        height: 540px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* Internet Explorer and Edge */
+    }
+    
+    .scroll-container1::-webkit-scrollbar {
+        width: 0px;
+        /* Safari and Chrome */
+    }
+    
+    .scroll-item1 {
+        display: inline-block;
+        width: auto;
+        /* Adjust the width of each item as needed */
+        height: auto;
+        margin-right: 1%;
+        /* Adjust the spacing between items as needed */
     }
     /*
  For horizantal
@@ -144,51 +147,90 @@
 
         <div class="row ml-1">
             <div class="column mt-4" style="width:40%; position:relative;">
-                <img src="images/1-removebg-preview.png" style="position:absolute;top: -10%; right: 20%; width:50%; height:60%;" alt="Mjoy Logo" />
-                <img src="images/sneaker-plans-bg.png" style=" height:90%; width:100%;" />
+                <img src="images/1-removebg-preview.png" style="position:absolute;top: 0%; right: 42%; width:30%; height:40%;" alt="Mjoy Logo" />
+                <img src="images/sneaker-plans-bg.png" />
             </div>
-
-            <!--<img src="images/1stImage.jpg" style=" height:90%; width:20%;" /></li>-->
-            <div class="column mt-4 ml-4 ">
+            <div class="column mt-4  " style="width:55%; position:relative;">
                 <div class="scroll-container">
                     <div class="scroll-item">
-                        <img src="images/1stImage.jpg" alt="Image 1">
+                        <img style="height:500px;" src="images/1stImage.jpg" alt="Image 1">
                     </div>
                     <div class="scroll-item">
-                        <img src="images/2ndImage.jpg" alt="Image 2">
+                        <img style="height:500px;" src="images/2ndImage.jpg" alt="Image 2">
                     </div>
                     <div class="scroll-item">
-                        <img src="images/3rdImage.png" alt="Image 3">
+                        <img style="height:500px;" src="images/3rdImage.png" alt="Image 3">
                     </div>
-                    <!-- Add more scroll-items with images as needed -->
                 </div>
             </div>
         </div>
 
-        <div class="row ml-1">
+
+        <div class="row ml-1 mt-2">
             <div class="container-left">
                 <h1><b>Collections</b></h1>
             </div>
 
         </div>
-
         <div class="row ml-1">
-            <div class="column mt-4 ml-1 ">
+            <div class="column mt-4 ml-1 " style="width:95%;  ">
                 <div class="scroll-container">
                     <div class="scroll-item">
-                        <img src="images/1stImage.jpg" alt="Image 1">
+                        <div class="box-color" style="position:relative;">
+                        </div>
                     </div>
-                    <div class="scroll-item">
-                        <img src="images/2ndImage.jpg" alt="Image 2">
+                    <div class="scroll-item1">
+                        <div class="box-color">
+
+                        </div>
                     </div>
-                    <div class="scroll-item">
-                        <img src="images/3rdImage.png" alt="Image 3">
+                    <div class="scroll-item1">
+                        <div class="box-color">
+
+                        </div>
                     </div>
+                    <div class="scroll-item1">
+                        <div class="box-color">
+
+                        </div>
+                    </div>
+
+
+
                     <!-- Add more scroll-items with images as needed -->
                 </div>
             </div>
         </div>
+
 </body>
+<script>
+    var scrollContainer1 = document.querySelector(".scroll-container1");
+    var isMouseDown1 = false;
+    var startX1;
+    var scrollLeft1;
+
+    scrollContainer1.addEventListener("mousedown", function(e) {
+        isMouseDown1 = true;
+        startX1 = e.pageX - scrollContainer1.offsetLeft;
+        scrollLeft1 = scrollContainer1.scrollLeft1;
+    });
+
+    scrollContainer1.addEventListener("mouseleave", function() {
+        isMouseDown1 = false;
+    });
+
+    scrollContainer1.addEventListener("mouseup", function() {
+        isMouseDown1 = false;
+    });
+
+    scrollContainer1.addEventListener("mousemove", function(e) {
+        if (!isMouseDown1) return;
+        e.preventDefault();
+        var x = e.pageX - scrollContainer1.offsetLeft;
+        var scroll1 = x - startX;
+        scrollContainer1.scrollLeft1 = scrollLeft1 - scroll;
+    });
+</script>
 <script>
     var scrollContainer = document.querySelector(".scroll-container");
     var isMouseDown = false;
